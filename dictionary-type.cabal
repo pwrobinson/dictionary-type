@@ -1,0 +1,39 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 22ddc725fb20f93d3bc9838612d0010a0c27913d2a77059a9f38550e7aae8fbc
+
+name:           dictionary-type
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/pwrobinson/dictionary-type#readme>
+homepage:       https://github.com/pwrobinson/dictionary-type#readme
+bug-reports:    https://github.com/pwrobinson/dictionary-type/issues
+author:         Peter Robinson
+maintainer:     pwr@lowerbound.io
+copyright:      2019 Peter Robinson
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/pwrobinson/dictionary-type
+
+library
+  exposed-modules:
+      Data.Dictionary
+      Data.Dictionary.Request
+  other-modules:
+      Paths_dictionary_type
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , random >=1.1 && <2
+  default-language: Haskell2010
