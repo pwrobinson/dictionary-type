@@ -4,10 +4,10 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 22ddc725fb20f93d3bc9838612d0010a0c27913d2a77059a9f38550e7aae8fbc
+-- hash: 5f5027646ea4940a9bf48e38492fa49307af6e793bd4df96da238d9f0da8a0d3
 
 name:           dictionary-type
-version:        0.1.0.0
+version:        0.1.0
 description:    Please see the README on GitHub at <https://github.com/pwrobinson/dictionary-type#readme>
 homepage:       https://github.com/pwrobinson/dictionary-type#readme
 bug-reports:    https://github.com/pwrobinson/dictionary-type/issues

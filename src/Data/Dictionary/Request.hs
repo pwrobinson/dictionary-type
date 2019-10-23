@@ -8,10 +8,10 @@ import Prelude hiding (lookup)
 
 
 data Request k
-    = Insert !k !k
+    = Insert !k k
     | Delete !k
     | Lookup !k
-    | Update !k !k -- ^ only used for the Test module, not for benchmarking
+    | Update !k k -- ^ only used for the Test module, not for benchmarking
     deriving (Show,Eq)
 
 isLookup (Lookup _ ) = True
