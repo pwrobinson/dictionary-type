@@ -4,6 +4,7 @@ module Data.Dictionary.Request
 where
 import System.Random
 import Control.Exception
+import Test.QuickCheck as QC
 import Prelude hiding (lookup)
 
 
@@ -14,6 +15,7 @@ data Request k
     | Update !k k -- ^ only used for the Test module, not for benchmarking
     deriving (Show,Eq)
 
+isLookup, isInsert, isDelete, isUpdate :: Request k -> Bool
 isLookup (Lookup _ ) = True
 isLookup _ = False
 
@@ -22,6 +24,9 @@ isInsert _ = False
 
 isDelete (Delete _ ) = True
 isDelete _ = False
+
+isUpdate (Update _ _) = True
+isUpdate _ = False
 
 -- | Generates a list of `Request`s according to the specified probability distribution and the key range.
 generateTests :: (Random k)
@@ -43,3 +48,11 @@ generateTests !l !(f@(fLookups,fInserts)) !keyRange
                     Lookup k
                  else Delete k
         (:) op <$> generateTests (l-1) f keyRange
+
+-- For testing, we are fine with a uniform distribution
+instance (QC.Arbitrary k) => QC.Arbitrary (Request k) where
+    arbitrary = QC.oneof
+        [ Insert <$> QC.arbitrary <*> QC.arbitrary
+        , Lookup <$> QC.arbitrary
+        , Delete <$> QC.arbitrary
+        ]

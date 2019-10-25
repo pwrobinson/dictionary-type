@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5f5027646ea4940a9bf48e38492fa49307af6e793bd4df96da238d9f0da8a0d3
+-- hash: 44349582d5f6d88e1fc447f6742ff226eb2e669200e165bd253efee313f226eb
 
 name:           dictionary-type
 version:        0.1.0
@@ -34,6 +34,7 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      QuickCheck >=2.13.2 && <3
+    , base >=4.7 && <5
     , random >=1.1 && <2
   default-language: Haskell2010
